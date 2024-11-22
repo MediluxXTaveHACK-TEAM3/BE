@@ -1,7 +1,11 @@
 package com.hackathon.springbootserver.api.patient.domain;
 
+import com.hackathon.springbootserver.api.reservation.domain.Reservation;
+import com.hackathon.springbootserver.api.visit.domain.Visit;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Builder
 @Entity
@@ -27,4 +31,10 @@ public class PatientEntity {
     private Long residentNo; // 주민등록번호
 
     private String address; // 주소
+
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Reservation> reservationList;
+
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Visit> visits;
 }
