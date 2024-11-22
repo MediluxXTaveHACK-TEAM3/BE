@@ -1,6 +1,6 @@
 package com.hackathon.springbootserver.dto;
 
-import com.hackathon.springbootserver.domain.PatientEntity;
+import com.hackathon.springbootserver.api.patient.domain.PatientEntity;
 
 public class PatientResponseDto {
     private Long id;
