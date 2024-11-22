@@ -1,7 +1,7 @@
 package com.hackathon.springbootserver.api.patient.controller;
 
 import com.hackathon.springbootserver.api.patient.domain.PatientEntity;
-import com.hackathon.springbootserver.dto.PatientResponseDto;
+import com.hackathon.springbootserver.api.patient.domain.dto.PatientResponseDto;
 import com.hackathon.springbootserver.api.patient.service.PatientService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
