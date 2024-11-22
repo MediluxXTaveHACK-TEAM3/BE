@@ -1,8 +1,7 @@
 package com.hackathon.springbootserver.api.visit.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.hackathon.springbootserver.api.patient.domain.PatientEntity;
+import jakarta.persistence.*;
 
 @Entity
 public class Visit {
@@ -10,4 +9,8 @@ public class Visit {
     private Long visitId;
 
     private int visitCount;
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id", nullable = false) // Foreign Key: patient_id
+    private PatientEntity patient;
 }
