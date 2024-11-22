@@ -3,12 +3,14 @@ package com.hackathon.springbootserver.api.reservation.controller;
 import com.hackathon.springbootserver.api.reservation.domain.ReservationRequestDto;
 import com.hackathon.springbootserver.api.reservation.domain.ReservationResponseDto;
 import com.hackathon.springbootserver.api.reservation.service.ReservationService;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/reservation")
+@AllArgsConstructor
 public class ReservationController {
 
     private final ReservationService reservationService;
