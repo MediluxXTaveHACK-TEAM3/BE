@@ -1,24 +1,39 @@
 package com.hackathon.springbootserver.api.patient.service;
 
 import com.hackathon.springbootserver.api.patient.domain.PatientEntity;
+import com.hackathon.springbootserver.api.patient.domain.PatientMapper;
+import com.hackathon.springbootserver.api.patient.domain.dto.PatientRequestDto;
+import com.hackathon.springbootserver.api.patient.domain.dto.PatientResponseDto;
 import com.hackathon.springbootserver.api.patient.repository.PatientRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDate;
 
 @Service
+@Slf4j
 public class PatientService {
     private final PatientRepository patientRepository;
 
     public PatientService(PatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
+
+    @Transactional
+    public PatientResponseDto createPatient(
+            PatientRequestDto requestDTO
+    ) {
+        PatientEntity newPatient = patientRepository.save(PatientMapper.toEntity(requestDTO
+        ));
+        return PatientMapper.toDto(newPatient);
+    }
+
+    @Transactional(readOnly = true)
     public PatientEntity getPatientById(Long id) {
         return patientRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Patient not found with ID: " + id));
     }
-
-
-    // TODO : Id로 찾기 for join
-
 
 }
 
