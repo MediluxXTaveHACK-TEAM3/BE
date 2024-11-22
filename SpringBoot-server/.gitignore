@@ -38,3 +38,5 @@ out/
 
 ../.idea/dataSources.xml
 ../.idea/modules.xml
+
+../SpringBoot-server/src/main/resources/application.yml
