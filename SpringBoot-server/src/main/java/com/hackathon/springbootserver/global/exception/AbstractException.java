@@ -1,4 +1,4 @@
-package com.hackathon.springbootserver.exception;
+package com.hackathon.springbootserver.global.exception;
 
 public abstract class AbstractException extends RuntimeException {
 

@@ -1,4 +1,4 @@
-package com.hackathon.springbootserver.exception;
+package com.hackathon.springbootserver.global.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

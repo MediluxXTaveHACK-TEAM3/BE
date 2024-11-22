@@ -1,4 +1,4 @@
-package com.hackathon.springbootserver.exception;
+package com.hackathon.springbootserver.global.exception;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.hackathon.springbootserver.exception.impl;
+package com.hackathon.springbootserver.global.exception.impl;
 
-import com.hackathon.springbootserver.exception.AbstractException;
+import com.hackathon.springbootserver.global.exception.AbstractException;
 import org.springframework.http.HttpStatus;
 
 public class AlreadyExistUserException extends AbstractException {
