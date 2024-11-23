@@ -11,11 +11,12 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class PatientResponseDto {
+
     private Long id;
     private String name;
     private String gender;
     private int age;
-    private String diseases;
+    private String diseasesName;
     private Long residentNo;
     private String address;
 

@@ -1,5 +1,6 @@
 package com.hackathon.springbootserver.api.patient.service;
 
+import com.hackathon.springbootserver.api.diseases.domain.Disease;
 import com.hackathon.springbootserver.api.patient.domain.PatientEntity;
 import com.hackathon.springbootserver.api.patient.domain.PatientMapper;
 import com.hackathon.springbootserver.api.patient.domain.dto.PatientRequestDto;
@@ -22,11 +23,13 @@ public class PatientService {
 
     @Transactional
     public PatientResponseDto createPatient(
-            PatientRequestDto requestDTO
+            PatientRequestDto requestDto
     ) {
-        PatientEntity newPatient = patientRepository.save(PatientMapper.toEntity(requestDTO
-        ));
-        return PatientMapper.toDto(newPatient);
+        PatientEntity savedPatient = patientRepository.save(
+                PatientMapper.toEntity(requestDto)
+        );
+
+        return PatientMapper.toDto(savedPatient);
     }
 
     @Transactional(readOnly = true)

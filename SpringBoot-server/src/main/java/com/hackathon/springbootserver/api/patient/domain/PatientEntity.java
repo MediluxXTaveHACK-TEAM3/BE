@@ -1,6 +1,5 @@
 package com.hackathon.springbootserver.api.patient.domain;
 
-import com.hackathon.springbootserver.api.diseases.domain.Disease;
 import com.hackathon.springbootserver.api.reservation.domain.Reservation;
 import com.hackathon.springbootserver.api.visit.domain.Visit;
 import jakarta.persistence.*;
@@ -26,9 +25,7 @@ public class PatientEntity {
 
     private int age; // 나이
 
-//    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<Disease> diseases = new ArrayList<>();
-    private String diseases;
+    private String diseaseName; // 기저질환 이름
 
     private String visitedHos; // 다니던 병원
 
@@ -37,8 +34,8 @@ public class PatientEntity {
     private String address; // 주소
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Reservation> reservationList;
+    private List<Reservation> reservations = new ArrayList<>();
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Visit> visits;
+    private List<Visit> visits = new ArrayList<>();
 }

@@ -1,6 +1,5 @@
 package com.hackathon.springbootserver.api.diseases.domain;
 
-import com.hackathon.springbootserver.api.patient.domain.PatientEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,10 +15,8 @@ public class Disease {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long diseaseId;
 
-    private String name;
+    private String diseaseName;
 
-    @ManyToOne
-    @JoinColumn(name = "patient_id") // Foreign Key
-    private PatientEntity patient;
+    private String patientName;
 
 }

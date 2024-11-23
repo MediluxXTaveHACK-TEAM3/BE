@@ -26,7 +26,6 @@ public class ReservationService {
     // 사용자가 예약하기
     public ReservationResponseDto register(
             Long patientId,
-            String diseasesName,
             String hospName
     ) {
         // 사용자 찾기
@@ -36,7 +35,6 @@ public class ReservationService {
         Reservation savedReservation = Reservation.builder()
                 .patient(patientRepository.findById(patientId)
                         .orElseThrow(() -> new IllegalArgumentException()))
-                .disease(diseasesRepository.findByName(diseasesName))
                 .resDate(LocalDateTime.now())
                 .hosName(hospName)
                 .build();

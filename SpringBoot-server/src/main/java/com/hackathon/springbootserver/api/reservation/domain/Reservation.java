@@ -30,9 +30,7 @@ public class Reservation{
     @JoinColumn(name = "patient_id", nullable = false)
     private PatientEntity patient;
 
-    @ManyToOne
-    @JoinColumn(name = "disease_id", nullable = false)
-    private Disease disease;
+    private String disease;
 
     private LocalDateTime resDate;
 }

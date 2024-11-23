@@ -5,9 +5,6 @@ import com.hackathon.springbootserver.api.patient.domain.dto.PatientRequestDto;
 import com.hackathon.springbootserver.api.patient.domain.dto.PatientResponseDto;
 import com.hackathon.springbootserver.api.patient.service.PatientService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.Parameters;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +22,10 @@ public class PatientController {
     @PostMapping("patient/createPatient")
     @Operation(summary = "회원 등록하기")
     public ResponseEntity<PatientResponseDto> createPatient(
-            @RequestBody PatientRequestDto patientRequestDto
+            @RequestBody PatientRequestDto requestDto
     ) {
-        return ResponseEntity.ok(patientService.createPatient(patientRequestDto));
+        return ResponseEntity.ok(patientService.createPatient(
+                requestDto));
     }
 
 

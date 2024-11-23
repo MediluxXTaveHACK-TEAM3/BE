@@ -19,7 +19,6 @@ public class ReservationController {
     @PostMapping("/createReservation")
     public ResponseEntity<ReservationResponseDto> register(
             @RequestParam Long patientId,
-            @RequestParam String diseasesName,
             @RequestParam String hospName
     ) {
         ReservationResponseDto register = reservationService.register(patientId, diseasesName, hospName);

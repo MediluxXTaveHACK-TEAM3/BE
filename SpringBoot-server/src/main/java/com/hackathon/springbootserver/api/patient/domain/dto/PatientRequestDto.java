@@ -9,7 +9,7 @@ public class PatientRequestDto {
     private String name;
     private String gender;
     private int age;
-    private String disease;
+    private String diseaseName;
     private String vistedHos;
     private Long residentNo;
     private String address;
